@@ -2,21 +2,21 @@ version: "3.7"
 
 services:
   rng:
-    image: training/dockercoins-rng:1.0
+    image: cgerull/dckr-training-rng:1.0
     networks:
     - dockercoins
     ports:
     - "8001:80"
 
   hasher:
-    image: training/dockercoins-hasher:1.0
+    image: cgerull/dckr-training-hasher:1.0
     networks:
     - dockercoins
     ports:
     - "8002:80"
 
   webui:
-    image: training/dockercoins-webui:1.0
+    image: cgerull/dckr-training-webui:1.1
     networks:
     - dockercoins
     ports:
@@ -28,7 +28,7 @@ services:
     - dockercoins
 
   worker:
-    image: training/dockercoins-worker:1.0
+    image: cgerull/dckr-training-worker:1.0
     networks:
     - dockercoins
 
