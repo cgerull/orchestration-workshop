@@ -1,7 +1,8 @@
-from flask import Flask, Response
 import os
 import socket
 import time
+
+from flask import Flask, Response
 
 app = Flask(__name__)
 
@@ -21,7 +22,7 @@ def index():
 @app.route("/<int:how_many_bytes>")
 def rng(how_many_bytes):
     # Simulate a little bit of delay
-    time.sleep(0.1)
+    time.sleep(0.01)
     return Response(
         os.read(urandom, how_many_bytes),
         content_type="application/octet-stream")
@@ -29,4 +30,3 @@ def rng(how_many_bytes):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
-
