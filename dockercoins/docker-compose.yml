@@ -2,6 +2,8 @@ version: "3.7"
 
 services:
   rng:
+    build:
+      context: ./rng
     image: cgerull/dckr-training-rng:1.0
     networks:
     - dockercoins
@@ -9,6 +11,8 @@ services:
     - "8001:80"
 
   hasher:
+    build:
+      context: ./hasher
     image: cgerull/dckr-training-hasher:1.0
     networks:
     - dockercoins
@@ -16,6 +20,8 @@ services:
     - "8002:80"
 
   webui:
+    build:
+      context: ./webui
     image: cgerull/dckr-training-webui:1.1
     networks:
     - dockercoins
@@ -28,6 +34,8 @@ services:
     - dockercoins
 
   worker:
+    build:
+      context: ./worker
     image: cgerull/dckr-training-worker:1.0
     networks:
     - dockercoins
